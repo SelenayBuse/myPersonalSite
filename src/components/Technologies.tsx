@@ -1,38 +1,175 @@
 "use client";
-import { Typewriter } from "react-simple-typewriter";
+import { useState } from "react";
+import {
+  // Languages
+  SiPython, SiC, SiCplusplus, SiSharp, SiPhp, SiJavascript, SiTypescript, SiDart,
+  // FE / FW
+  SiReact, SiNextdotjs, SiVuedotjs, SiFlutter, SiSelenium, SiSpring, SiHtml5, SiCss3, SiTailwindcss, SiVite, SiFramer,
+  // Sec
+  SiOwasp, SiKalilinux, SiWireshark, SiCisco,
+  // Cloud
+  SiGooglecloud, SiAmazon, SiDocker, SiKubernetes,
+  // ML
+  SiTensorflow, SiPytorch, SiKeras,
+  // DB
+  SiMysql, SiPostgresql, SiMongodb, SiFirebase,
+} from "react-icons/si";
+import { TbApi } from "react-icons/tb";
+import { HiOutlineLockClosed } from "react-icons/hi"; // fallback (e.g., TenSEAL, TF Federated)
+
+type Cat = {
+  id: string;
+  title: string;
+  emoji: string;
+  items: string[];
+};
+
+const CATEGORIES: Cat[] = [
+  { id: "pl",   title: "Programming Languages", emoji: "💻", items: ["Python", "C/C++/C#", "Java", "PHP", "JS/TS", "Dart"] },
+  { id: "fw",   title: "Frameworks",            emoji: "🧩", items: ["React", "Next.js", "Vue.js", "Flutter", "Selenium", "Spring Framework", "TenSEAL"] },
+  { id: "be",   title: "Backend",               emoji: "🛠️", items: ["REST", "Spring Framework", "Firebase"] },
+  { id: "fe",   title: "Frontend",              emoji: "🎨", items: ["React", "Next.js", "Vue.js", "HTML", "CSS/Tailwind", "Vite", "Framer Motion"] },
+  { id: "sec",  title: "Cybersecurity",         emoji: "🔐", items: ["OWASP", "Kali Linux", "Wireshark", "Cisco Packet Tracer"] },
+  { id: "cloud",title: "Cloud",                 emoji: "☁️", items: ["GCP", "AWS", "Docker", "Kubernetes"] },
+  { id: "mach", title: "Machine Learning",      emoji: "🤖", items: ["Tensorflow", "Tensorflow Federated", "PyTorch", "Keras"] },
+  { id: "db",   title: "Database",              emoji: "🗃️", items: ["MySQL", "PostgreSQL", "MongoDB", "Firebase Firestore"] },
+];
+
+/** Returns icon(s) for a given item label. */
+function IconFor({ label, size = 16 }: { label: string; size?: number }) {
+  const cls = "shrink-0";
+  switch (label) {
+    // --- Languages
+    case "Python":       return <SiPython size={size} className={cls} color="#3776AB" />;
+    
+    case "PHP":          return <SiPhp size={size} className={cls} color="#777BB4" />;
+    case "Dart":         return <SiDart size={size} className={cls} color="#0175C2" />;
+    case "JS/TS":        return (
+      <span className="flex items-center gap-1">
+        <SiJavascript size={size} className={cls} color="#F7DF1E" />
+        <SiTypescript size={size} className={cls} color="#3178C6" />
+      </span>
+    );
+    case "C/C++/C#":     return (
+      <span className="flex items-center gap-1">
+        <SiC size={size} className={cls} color="#A8B9CC" />
+        <SiCplusplus size={size} className={cls} color="#00599C" />
+        
+      </span>
+    );
+
+    // --- Frameworks / FE
+    case "React":             return <SiReact size={size} className={cls} color="#61DAFB" />;
+    case "Next.js":           return <SiNextdotjs size={size} className={cls} />;
+    case "Vue.js":            return <SiVuedotjs size={size} className={cls} color="#42B883" />;
+    case "Flutter":           return <SiFlutter size={size} className={cls} color="#02569B" />;
+    case "Selenium":          return <SiSelenium size={size} className={cls} color="#43B02A" />;
+    case "Spring Framework":  return <SiSpring size={size} className={cls} color="#6DB33F" />;
+    case "TenSEAL":           return <HiOutlineLockClosed size={size} className={cls} />;
+
+    // --- Backend
+    case "REST":              return <TbApi size={size} className={cls} />;
+    case "Firebase":          return <SiFirebase size={size} className={cls} color="#FFCA28" />;
+
+    // --- Frontend extras
+    case "HTML":              return <SiHtml5 size={size} className={cls} color="#E34F26" />;
+    case "CSS/Tailwind":      return (
+      <span className="flex items-center gap-1">
+        <SiCss3 size={size} className={cls} color="#1572B6" />
+        <SiTailwindcss size={size} className={cls} color="#38BDF8" />
+      </span>
+    );
+    case "Vite":              return <SiVite size={size} className={cls} color="#646CFF" />;
+    case "Framer Motion":     return <SiFramer size={size} className={cls} />;
+
+    // --- Security
+    case "OWASP":             return <SiOwasp size={size} className={cls} />;
+    case "Kali Linux":        return <SiKalilinux size={size} className={cls} color="#557C94" />;
+    case "Wireshark":         return <SiWireshark size={size} className={cls} color="#1679A7" />;
+    case "Cisco Packet Tracer": return <SiCisco size={size} className={cls} color="#1BA0D7" />;
+
+    // --- Cloud
+    case "GCP":               return <SiGooglecloud size={size} className={cls} color="#4285F4" />;
+    case "AWS":               return <SiAmazon size={size} className={cls} color="#FF9900" />;
+    case "Docker":            return <SiDocker size={size} className={cls} color="#2496ED" />;
+    case "Kubernetes":        return <SiKubernetes size={size} className={cls} color="#326CE5" />;
+
+    // --- ML
+    case "Tensorflow":            return <SiTensorflow size={size} className={cls} color="#FF6F00" />;
+    case "Tensorflow Federated":  return <SiTensorflow size={size} className={cls} color="#FF6F00" />;
+    case "PyTorch":               return <SiPytorch size={size} className={cls} color="#EE4C2C" />;
+    case "Keras":                 return <SiKeras size={size} className={cls} color="#D00000" />;
+
+    // --- DB
+    case "MySQL":             return <SiMysql size={size} className={cls} color="#4479A1" />;
+    case "PostgreSQL":        return <SiPostgresql size={size} className={cls} color="#336791" />;
+    case "MongoDB":           return <SiMongodb size={size} className={cls} color="#47A248" />;
+    case "Firebase Firestore":return <SiFirebase size={size} className={cls} color="#FFCA28" />;
+
+    default: return null;
+  }
+}
 
 export default function Technologies() {
+  const [active, setActive] = useState<string | null>(null);
+
   return (
-    <section
-      id="technologies"
-      className="scroll-mt-28 py-20 md:py-28 bg-transparent"
-    >
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-sm text-white/80">
-          Technologies
-        </span>
+    <section id="technologies" className="scroll-mt-28 py-20 md:py-28 bg-transparent">
+      <div className="mx-auto max-w-6xl px-6">
+        <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-sm text-white/80">Technologies</span>
+        <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-[var(--color-orange-500)]">Technologies</h2>
 
-        <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-[var(--color-orange-500)]">
-          Technologies
-        </h2>
+        {/* Header row */}
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-8 gap-6">
+          {CATEGORIES.map((cat) => {
+            const isOpen = active === cat.id;
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={`panel-${cat.id}`}
+                onClick={() => setActive(isOpen ? null : cat.id)}
+                className="group select-none focus:outline-none"
+              >
+                <div className={`mx-auto flex h-11 w-11 items-center justify-center rounded-full text-base transition
+                  ${isOpen ? "bg-[var(--color-orange-600)] text-white shadow-[0_0_16px_rgba(255,125,0,.45)]"
+                           : "bg-white/10 text-white/90 group-hover:bg-white/15"}`}>
+                  <span className="leading-none">{cat.emoji}</span>
+                </div>
+                <div className={`mt-3 h-0.5 w-full rounded-full transition
+                  ${isOpen ? "bg-[var(--color-orange-600)] shadow-[0_0_14px_rgba(255,125,0,.55)]"
+                           : "bg-white/25 group-hover:bg-white/40"}`} />
+                <div className={`mt-2 text-center text-[13px] font-semibold transition
+                  ${isOpen ? "text-white" : "text-white/85 group-hover:text-white"}`}>
+                  {cat.title}
+                </div>
+              </button>
+            );
+          })}
+        </div>
 
-        <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed">
-          <Typewriter
-            words={[
-              `I ranked in the top 2% in the YKS exam and was admitted to Sabancı University with a 50% scholarship.
-                During my second year, I was a Learning Assistant for NS101 and NS102 courses, allowing me to assist first year engineering students.
-                I was in Sabancı Women in Engineering Society (Sabancı WIE), actively planning events such as workshops, pitchdesks, and interviews.
-                I was chosen for Dean's List - High Honor award for 2 semesters in a row.
-                I graduated from Sabancı University with a Bachelor's in Computer Science and Engineering in 2025.
-                I completed my internship in Ericsson Türkiye as a Security Researcher in Jan 2025.`
-            ]}
-            typeSpeed={40}   // yazma hızı
-            deleteSpeed={0}  // silme yok
-            delaySpeed={1500} // cümleler arası bekleme
-            cursor
-            cursorStyle="|"
-          />
-        </p>
+        {/* Expanding panel */}
+        <div className="relative">
+          <div className={`transition-[max-height,opacity] duration-400 ease-out overflow-hidden
+            ${active ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"}`}>
+            {active && (
+              <div id={`panel-${active}`} className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <div className="text-white/90 text-sm font-semibold">
+                  {CATEGORIES.find((c) => c.id === active)?.title}
+                </div>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {(CATEGORIES.find((c) => c.id === active)?.items ?? []).map((label) => (
+                    <li key={label} className="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-sm text-white/85">
+                      <IconFor label={label} />
+                      <span>{label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );
