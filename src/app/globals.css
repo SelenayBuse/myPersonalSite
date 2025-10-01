@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --color-orange-500: #FF9E00; /* en açık */
+  --color-orange-600: #FF9100;
+  --color-orange-700: #FF8500;
+  --color-orange-800: #FF7900;
+  --color-orange-900: #FF6D00; /* en koyu */
+
+  --color-purple-500: #9D4EDD; /* en açık */
+  --color-purple-600: #7B2CBF;
+  --color-purple-700: #5A189A;
+  --color-purple-800: #3C096C;
+  --color-purple-900: #240046; /* en koyu */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-purple-900);
+    --foreground: var(--color-orange-500);
+  }
+}
+
+body {
+  background: var(--background);   /* 🔑 sabit renk yerine değişken */
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-image: url("/website_bg.png"); /* public klasöründen */
+  background-size: cover;      /* resmi ekranı kapla */
+  background-position: center; /* ortala */
+  background-repeat: no-repeat; /* tekrar etme */
+}
