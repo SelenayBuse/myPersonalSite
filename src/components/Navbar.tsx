@@ -22,16 +22,16 @@ export default function Navbar() {
             About Me
           </Link>
           <Link
-            href="#projects"
-            className="px-3 py-1.5 rounded-full text-white/90 hover:text-[var(--color-purple-900)] transition"
-          >
-            My Projects
-          </Link>
-          <Link
             href="#technologies"
             className="px-3 py-1.5 rounded-full text-white/90 hover:text-[var(--color-purple-900)] transition"
           >
             Technologies
+          </Link>
+          <Link
+            href="#projects"
+            className="px-3 py-1.5 rounded-full text-white/90 hover:text-[var(--color-purple-900)] transition"
+          >
+            My Projects
           </Link>
           <Link
             href="#contact"

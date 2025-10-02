@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Technologies from "@/components/Technologies";
 import Projects from "@/components/Projects";
 import VideoCarousel from "@/components/VideoCarousel";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
@@ -90,6 +91,7 @@ export default function Home() {
       <About />
       <Technologies />
       <Projects />
+      <Contact />
     </main>
   );
 }

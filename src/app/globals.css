@@ -34,3 +34,11 @@ body {
   background-position: center; /* ortala */
   background-repeat: no-repeat; /* tekrar etme */
 }
+
+/* smooth anchor scroll */
+html { scroll-behavior: smooth; }
+
+/* erişilebilirlik: reduce-motion seçeneği varsa ani kaydır */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
