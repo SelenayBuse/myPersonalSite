@@ -31,7 +31,7 @@ export default function Home() {
               <div className="md:-translate-x-[38px] lg:-translate-x-[44px] will-change-transform">
                 <div className="flex flex-col items-center text-center md:items-start md:text-left">
                   <Image
-                    src="/profile.jpg"
+                    src="/profile.JPG"
                     alt="My profile photo"
                     width={220}
                     height={220}
