@@ -40,7 +40,7 @@ export default function Home() {
                   />
 
                   <h1 className="mt-8 text-4xl md:text-6xl font-extrabold text-[var(--color-orange-500)]">
-                    Hi, I'm Selenay 👋
+                    Hi, I&apos;m Selenay 👋
                   </h1>
 
                   <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl">

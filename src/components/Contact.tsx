@@ -22,7 +22,9 @@ export default function Contact() {
       await navigator.clipboard.writeText(EMAIL);
       setCopied(true);
       setTimeout(() => setCopied(false), 1200);
-    } catch (_) {}
+    } catch {
+      // no-op
+    }
   };
 
   // Kart verileri
