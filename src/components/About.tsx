@@ -22,11 +22,11 @@ export default function About() {
               `I ranked in the top 2% in the YKS exam and was admitted to Sabancı University with a 50% scholarship.
                 During my second year, I was a Learning Assistant for NS101 and NS102 courses, allowing me to assist first year engineering students.
                 I was in Sabancı Women in Engineering Society (Sabancı WIE), actively planning events such as workshops, pitchdesks, and interviews.
-                I was chosen for Dean's List - High Honor award for 2 semesters in a row.
+                I was chosen for Dean's List - High Honor award for 4 semesters.
                 I graduated from Sabancı University with a Bachelor's in Computer Science and Engineering in 2025.
                 I completed my internship in Ericsson Türkiye as a Security Researcher in Jan 2025.`
             ]}
-            typeSpeed={40}   // yazma hızı
+            typeSpeed={50}   // yazma hızı
             deleteSpeed={0}  // silme yok
             delaySpeed={1500} // cümleler arası bekleme
             cursor

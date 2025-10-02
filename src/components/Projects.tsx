@@ -50,14 +50,15 @@ const PROJECTS: Project[] = [
     highlights: [
       "Designed a simple web-based news platform with PHP and HTML",
       "Employed RSS feed integration",
-      "Applied Penetration Testing for vulnerability detection",
-      "Mitigations for XSS, SQL Injection, and data exposure",
-      "Static analysis to find & fix vulnerabilities",
+      "Applied Penetration Testing for vulnerabilities such as injections, path traversal, data upload of dangerous type etc.",
+      "Utilized Static code analysis with SonarCube to find & fix vulnerabilities",
+      "Patched vulnerabilities for maximum protection",
+      
     ],
-    stack: ["Next.js", "Security", "Logging", "Static Analysis"],
+    stack: ["HTML", "PHP", "Penetration Testing", "Static Code Analysis", "SonarCube", "Patching Vulnerabilities"],
   },
   {
-    title: "MUSICEE – Music Streaming Platform (Web & Mobile)",
+    title: "MUSICEE – Fullstack Music Streaming Platform",
     highlights: [
       "Finished multi-platform streaming app (web + mobile)",
       "Backend with Python; MongoDB as primary DB; CI via CircleCI",
@@ -65,14 +66,15 @@ const PROJECTS: Project[] = [
       "Mobile app with Flutter & Android Studio",
       "Agile tracked via Jira & GitHub",
     ],
-    stack: ["Python", "MongoDB", "CircleCI", "Next.js", "Tailwind", "React", "Flutter"],
+    stack: ["Agile", "Python", "MongoDB", "CircleCI", "Next.js", "Tailwind", "React", "Flutter"],
   },
   {
     title:
-      "TutorDesk – Weekly Planning & Financial Management for Private Tutors (Ongoing)",
-    highlights: [
-      "Full-stack mobile app for Android & iOS with Flutter",
-      "Firebase Auth + Cloud Firestore for auth & data",
+      "TutorDesk – Weekly Planning & Financial Management for Private Tutors",
+    org: "Ongoing",
+      highlights: [
+      "Finalized fullstack mobile app for Android & iOS with Flutter",
+      "Employed Firebase Auth + Cloud Firestore for auth & data",
     ],
     stack: ["Flutter", "Firebase Auth", "Cloud Firestore", "Mobile"],
   },
@@ -80,12 +82,43 @@ const PROJECTS: Project[] = [
     title: "Web Application Testing & Quality Assurance",
     highlights: [
       "Designed test scenarios per website structure",
-      "Python + Selenium automation for presence & functionality checks",
+      "Utilized Python + Selenium automation for presence & functionality checks",
       "End-to-end workflows to guarantee critical paths",
       "Caught broken links, missing elements, malfunctioning features",
     ],
     stack: ["Python", "Selenium", "E2E", "QA"],
   },
+  {
+    "title": "Rock - Paper - Scissors Game",
+    "highlights": [
+      "Developed a fully functional Rock-Paper-Scissors game using C#",
+      "GUI is implemented with C#",
+      "Implemented user input handling and player queue logic",
+      "Included validation for inputs and game rules enforcement",
+      "Used loop structures to allow multiple rounds with score tracking"
+    ],
+    "stack": ["C#", ".NET", "Game Logic"]
+  },
+
+  {
+    title: "Visual Representation and Numerical Analysis of the Femicide rates in Turkey",
+    highlights: [
+      "Developed a Python program utilizing datasets retrieved from KAGGLE, and TÜİK website via web scraping.",
+      "Cleaned and manipulated the datasets to achieve the desired format and content.",
+      "Utilized external libraries including pandas, numpy, matplotlib, seaborn, and beautifulsoup for data processing and visualization.",
+      "Represented the results visually using the aforementioned libraries to enhance comprehension and insight.",
+    ],
+    stack: ["Python", "Data Processing", "Data Visualization"],
+  },
+  {
+    title: "Elevator Program",
+    highlights: [
+      "Implemented an elevator program with Verilog.",
+      
+    ],
+    stack: ["Verilog", "Digital System Design"],
+  },
+
 ];
 
 export default function Projects() {

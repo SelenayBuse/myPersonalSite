@@ -125,7 +125,7 @@ function IconFor({ label, size = 16 }: { label: string; size?: number }) {
 }
 
 export default function Technologies() {
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<string>("pl");
 
   return (
     <section id="technologies" className="scroll-mt-28 py-20 md:py-28 bg-transparent">
@@ -148,7 +148,7 @@ export default function Technologies() {
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={`panel-${cat.id}`}
-                onClick={() => setActive(isOpen ? null : cat.id)}
+                onClick={() => setActive(isOpen ? 'pl' : cat.id)}
                 className="group select-none focus:outline-none grid grid-rows-[auto_2px_44px] justify-items-center gap-y-2"
               >
                 {/* icon */}
