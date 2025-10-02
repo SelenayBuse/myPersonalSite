@@ -69,18 +69,18 @@ export default function Home() {
             {/* VIDEO */}
             <AnimatePresence>
               {showVideo && (
-                <motion.div
-                  className="justify-self-end"
-                  initial={{ opacity: 0, x: 100, scale: 0.9 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  exit={{ opacity: 0, x: 50, scale: 0.95 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                  {/* ⬇️ ~1cm sağa nudge (md ve üstü) */}
-                  <div className="md:translate-x-[38px] lg:translate-x-[44px] will-change-transform">
-                    <VideoCarousel />
-                  </div>
-                </motion.div>
+              <motion.div
+                // eskiden: className="justify-self-end"
+                className="w-full justify-self-stretch md:w-auto md:justify-self-end"
+                initial={{ x: "calc(50vw - 50% - 3rem)", opacity: 1 }}
+                animate={{ x: "0%", opacity: 1 }}
+                transition={{ duration: 1.2, ease: "easeInOut", delay: 2 }}
+                onAnimationComplete={() => setShowVideo(true)}
+              >
+                <div className="md:translate-x-[38px] lg:translate-x-[44px] will-change-transform">
+                  <VideoCarousel />
+                </div>
+              </motion.div>
               )}
             </AnimatePresence>
 
