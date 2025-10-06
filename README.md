@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 My Portfolio Site – Selenay.dev
 
-## Getting Started
+A modern and fully responsive personal portfolio website built to showcase my **education**, **technical skill set**, and **projects** in an elegant, interactive, and mobile-friendly way.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Live Demo
+🔗 [my-portfolio-site-pearl-three.vercel.app](my-portfolio-site-pearl-three.vercel.app)
+
+---
+
+## 🧠 About the Project
+**My Portfolio Site** serves as a digital catalog that highlights my background in **cybersecurity, software development, and cloud technologies**.  
+It combines smooth animations, responsive design, and clean UI/UX principles to create an engaging online presence.
+
+The homepage introduces me with a hero section, a dynamic **video carousel**, and quick links to my projects and contact form.  
+Subpages include dedicated sections for **About Me**, **Technologies**, **Projects**, and **Contact**.
+
+---
+
+## 🏗️ Tech Stack
+
+### 💻 Frontend
+- **Next.js 14 (App Router)**
+- **React 18**
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** – for animations and transitions
+- **Next/Image** – for optimized image rendering
+
+### 🎨 Design & UI
+- **Custom color palette** inspired by orange/purple gradients
+- **Responsive layout** powered by Tailwind’s grid and flex utilities
+- **Smooth video transitions** using Framer Motion’s `AnimatePresence`
+- **Figma / Canva** used for UI mockups and visual concepting
+
+---
+
+## 📦 Dependencies
+
+Main NPM packages used:
+
+| Package | Purpose |
+|----------|----------|
+| `next` | Core React framework for SSR/SSG |
+| `react`, `react-dom` | Frontend rendering |
+| `framer-motion` | Smooth animations & transitions |
+| `tailwindcss`, `postcss`, `autoprefixer` | Styling framework |
+| `typescript` | Type safety and maintainability |
+| `eslint`, `prettier` | Code formatting & linting |
+
+---
+
+## ⚙️ Project Structure
+```
+my-portfolio-site/mysite
+│
+├── public/
+│ ├── videos/ # grad.mp4, surf.mp4, and poster images
+│ ├── profile.JPG # main profile image
+│ └── favicon.ico
+│
+├── src/
+│ ├── app/
+│ │ ├── layout.tsx # Global layout (Navbar, Footer)
+│ │ ├── page.tsx # Homepage (Hero, About, Tech, Projects, Contact)
+│ │
+│ └── components/
+│ ├── About.tsx
+│ ├── Technologies.tsx
+│ ├── Projects.tsx
+│ ├── Contact.tsx
+│ └── VideoCarousel.tsx # Animated video slider
+│
+├── .gitignore
+├── README.md
+├── next.config.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── eslint.config.mjs
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Deployment Strategy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The site is deployed on Vercel with automatic build and deployment from the main branch.
+When you push changes to main, Vercel automatically:
+Pulls the latest commit
+Installs dependencies
+Runs ```npm run build```
+Serves the optimized Next.js app globally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📱 Responsiveness
 
-## Learn More
+Designed with a web-first approach.
+Fully responsive across all screen sizes (mobile, tablet, desktop).
+Custom breakpoints are managed through Tailwind’s responsive utilities.
 
-To learn more about Next.js, take a look at the following resources:
+## 💡 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🎥 Animated video carousel in hero section
+🧠 Dynamic "About Me" and "Technologies" sections
+🛠️ Projects dynamically displayed
+✉️ Smooth scroll-to-section navigation
+⚡ Fast build and optimized performance with Next.js
