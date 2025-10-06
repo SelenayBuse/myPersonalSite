@@ -84,23 +84,32 @@ my-portfolio-site/mysite
 
 ## ⚙️ Deployment Strategy
 
-The site is deployed on Vercel with automatic build and deployment from the main branch.
-When you push changes to main, Vercel automatically:
-Pulls the latest commit
-Installs dependencies
-Runs ```npm run build```
-Serves the optimized Next.js app globally
+- The site is deployed on Vercel with automatic build and deployment from the main branch.
+- When you push changes to main, Vercel automatically:
+  - Pulls the latest commit
+  - Installs dependencies
+  - Runs ```npm run build```
+  - Serves the optimized Next.js app globally
 
 ## 📱 Responsiveness
 
-Designed with a web-first approach.
-Fully responsive across all screen sizes (mobile, tablet, desktop).
-Custom breakpoints are managed through Tailwind’s responsive utilities.
+- Designed with a web-first approach.
+- Fully responsive across all screen sizes (mobile, tablet, desktop).
+- Custom breakpoints are managed through Tailwind’s responsive utilities.
 
 ## 💡 Features
 
-🎥 Animated video carousel in hero section
-🧠 Dynamic "About Me" and "Technologies" sections
-🛠️ Projects dynamically displayed
-✉️ Smooth scroll-to-section navigation
-⚡ Fast build and optimized performance with Next.js
+- 🎥 Animated video carousel in hero section
+- 🧠 Dynamic "About Me" and "Technologies" sections
+- 🛠️ Projects dynamically displayed
+- ✉️ Smooth scroll-to-section navigation
+- ⚡ Fast build and optimized performance with Next.js
+
+## 📸 Screenshots 
+
+<img width="1898" height="866" alt="image" src="https://github.com/user-attachments/assets/cc659992-8b8c-4abe-ae87-663c425dd073" />
+<img width="1896" height="867" alt="image" src="https://github.com/user-attachments/assets/b57d5ee9-2f31-4cfa-a9f9-c5782559935d" />
+<img width="1895" height="861" alt="image" src="https://github.com/user-attachments/assets/c64ac08a-23f1-46b7-bd87-4d515aca6579" />
+<img width="1895" height="864" alt="image" src="https://github.com/user-attachments/assets/602b911f-e418-446c-aa32-b0ffdc1b4c06" />
+<img width="1898" height="863" alt="image" src="https://github.com/user-attachments/assets/3299d965-23d2-4c5e-99ea-3af0f43e05b3" />
+
